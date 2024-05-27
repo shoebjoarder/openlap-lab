@@ -36,6 +36,7 @@ const useStyles = styled((theme) => ({
   }
 }));
 
+// New stepper function
 export default function Steppers(props) {
   // Props
   const {steps: {icons, names}, activeStep, completedStep, handleStep} = props;
