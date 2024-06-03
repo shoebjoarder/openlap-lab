@@ -4,9 +4,11 @@ import News from "./News";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar";
 import openlapLogo from "../../../assets/img/home-openlap-laptop.jpg";
+import { useState } from "react";
 
 const Home = () => {
   const navigate = useNavigate();
+  const [count, setCount] = useState(0);
 
   const handleTestUser = () => {
     localStorage.setItem("userToken", import.meta.env.VITE_APP_TEST_KEY);
@@ -14,6 +16,12 @@ const Home = () => {
       window.location.href = "/isc";
     }, 1000);
   };
+
+  const handleClick = () => {
+    setCount(count + 1);
+  };
+
+  console.log(count);
 
   return (
     <>
@@ -45,8 +53,8 @@ const Home = () => {
               </Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" onClick={() => navigate("/sign-up")}>
-                Sign up now
+              <Button variant="contained" onClick={handleClick}>
+                New Button
               </Button>
             </Grid>
           </Grid>
